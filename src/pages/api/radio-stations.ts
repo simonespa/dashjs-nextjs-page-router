@@ -1,13 +1,13 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-
-interface ErrorResponse {
-  message: string
-}
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 type OkResponse = {
   id: string;
   name: string;
   description: string;
+}
+
+interface ErrorResponse {
+  message: string
 }
 
 export default function handler(
