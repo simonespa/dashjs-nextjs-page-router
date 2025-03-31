@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ichef.bbci.co.uk',
+        pathname: '/images/ic/**',
+      },
     ],
   },
 };
