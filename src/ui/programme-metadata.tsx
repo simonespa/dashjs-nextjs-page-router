@@ -13,9 +13,10 @@ export default function ProgrammeMetadata({
 }) {
   const image = id ? (
     <Image
-      width={160}
-      height={160}
+      width={320}
+      height={180}
       src={IMAGE_URL.replace("{ID}", id)}
+      // src="/bbc_radio.jpg"
       alt={`${title} - ${description}`}
       className="w-64 h-64 mx-auto rounded-lg mb-4 shadow-lg shadow-teal-50"
     />
