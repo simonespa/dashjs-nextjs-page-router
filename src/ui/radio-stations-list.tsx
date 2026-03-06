@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { radioStationId } from "@/signals";
 interface Props {
   id: string;
   name: string;
@@ -8,6 +8,14 @@ interface Props {
 
 const LOGO_URL =
   "https://sounds.files.bbci.co.uk/3.8.0/networks/{ID}/colour_default.svg";
+
+const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const id = e.currentTarget.dataset.id;
+  if (id) {
+    console.log(`Radio Stations: ${id}`);
+    radioStationId.value = id;
+  }
+};
 
 export default function RadioStationsList({
   radioStations,
@@ -27,6 +35,8 @@ export default function RadioStationsList({
           return (
             <div
               key={radioStation.id}
+              data-id={radioStation.id}
+              onClick={handleClick}
               className="flex border-b py-3 cursor-pointer hover:shadow-md px-2 "
             >
               <Image
